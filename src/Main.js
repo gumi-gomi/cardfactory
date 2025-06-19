@@ -73,33 +73,33 @@ const Mainbox = styled.div`
   }
 `;
 
-// ✅ 이미지 경로 수정
+// ✅ 이미지 경로 수정 (webp 확장자)
 const frontImages = [
-  `${process.env.PUBLIC_URL}/img/card1.png`,
-  `${process.env.PUBLIC_URL}/img/card2.png`,
-  `${process.env.PUBLIC_URL}/img/card3.png`,
-  `${process.env.PUBLIC_URL}/img/card4.png`,
-  `${process.env.PUBLIC_URL}/img/card5.png`,
-  `${process.env.PUBLIC_URL}/img/card6.png`,
-  `${process.env.PUBLIC_URL}/img/card7.png`,
-  `${process.env.PUBLIC_URL}/img/card8.png`,
-  `${process.env.PUBLIC_URL}/img/card17.png`,
-  `${process.env.PUBLIC_URL}/img/card18.png`,
-  `${process.env.PUBLIC_URL}/img/card19.png`,
+  `${process.env.PUBLIC_URL}/img/card1.webp`,
+  `${process.env.PUBLIC_URL}/img/card2.webp`,
+  `${process.env.PUBLIC_URL}/img/card3.webp`,
+  `${process.env.PUBLIC_URL}/img/card4.webp`,
+  `${process.env.PUBLIC_URL}/img/card5.webp`,
+  `${process.env.PUBLIC_URL}/img/card6.webp`,
+  `${process.env.PUBLIC_URL}/img/card7.webp`,
+  `${process.env.PUBLIC_URL}/img/card8.webp`,
+  `${process.env.PUBLIC_URL}/img/card17.webp`,
+  `${process.env.PUBLIC_URL}/img/card18.webp`,
+  `${process.env.PUBLIC_URL}/img/card19.webp`,
 ];
 
 const backImages = [
-  `${process.env.PUBLIC_URL}/img/card9.png`,
-  `${process.env.PUBLIC_URL}/img/card10.png`,
-  `${process.env.PUBLIC_URL}/img/card11.png`,
-  `${process.env.PUBLIC_URL}/img/card12.png`,
-  `${process.env.PUBLIC_URL}/img/card13.png`,
-  `${process.env.PUBLIC_URL}/img/card14.png`,
-  `${process.env.PUBLIC_URL}/img/card15.png`,
-  `${process.env.PUBLIC_URL}/img/card16.png`,
-  `${process.env.PUBLIC_URL}/img/card21.png`,
-  `${process.env.PUBLIC_URL}/img/card22.png`,
-  `${process.env.PUBLIC_URL}/img/card23.png`,
+  `${process.env.PUBLIC_URL}/img/card9.webp`,
+  `${process.env.PUBLIC_URL}/img/card10.webp`,
+  `${process.env.PUBLIC_URL}/img/card11.webp`,
+  `${process.env.PUBLIC_URL}/img/card12.webp`,
+  `${process.env.PUBLIC_URL}/img/card13.webp`,
+  `${process.env.PUBLIC_URL}/img/card14.webp`,
+  `${process.env.PUBLIC_URL}/img/card15.webp`,
+  `${process.env.PUBLIC_URL}/img/card16.webp`,
+  `${process.env.PUBLIC_URL}/img/card21.webp`,
+  `${process.env.PUBLIC_URL}/img/card22.webp`,
+  `${process.env.PUBLIC_URL}/img/card23.webp`,
 ];
 
 function Card({ frontTexture, backTexture, index, total }) {
