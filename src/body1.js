@@ -34,6 +34,10 @@ const Body1all = styled.div`
     border-radius: 8px;
     cursor: pointer;
 
+      @media screen and (max-width: 740px) {
+            height: 300px;
+        }
+
     &::before {
       content: '';
       position: absolute;
@@ -61,6 +65,19 @@ const Body1all = styled.div`
     align-items: center;
     gap: 40px;
 
+    @media screen and (max-width:1340px) {
+        height: 400px;
+    }
+     @media screen and (max-width: 1100px) {
+            height: 530px;
+        }
+          @media screen and (max-width: 880px) {
+            height: 450px;
+        }
+          @media screen and (max-width: 740px) {
+            height: 400px;
+        }
+
     .scroll {
       flex: 2;
       height: 100%;
@@ -81,6 +98,18 @@ const Body1all = styled.div`
         gap: 20px;
         padding: 20px;
         box-sizing: border-box;
+         @media screen and (max-width:1340px) {
+        height: 400px;
+    }
+    @media screen and (max-width: 1100px) {
+            height: 500px;
+        }
+          @media screen and (max-width: 880px) {
+            height: 420px;
+        }
+          @media screen and (max-width: 740px) {
+            height: 350px;
+        }
 
         .item1box {
           outline: 1px solid rgba(0, 0, 0, 0.05);
@@ -132,9 +161,15 @@ const Body1all = styled.div`
       background-position: center;
       outline: 1px solid rgba(0, 0, 0, 0.05);
 
+        @media screen and (max-width: 1100px) {
+            display: none;
+        }
+
       .recommend-box {
         color: #000;
         text-align: center;
+
+      
 
         h3 {
           font-size: 25px;
@@ -173,6 +208,9 @@ const Body1all = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    @media screen and (max-width: 740px) {
+            flex-direction: column;
+        }
 
     .feature {
       flex: 1;
@@ -182,10 +220,23 @@ const Body1all = styled.div`
       text-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
+        @media screen and (max-width: 740px) {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
       h4 {
         font-size: 18px;
         font-weight: bold;
         margin-bottom: 10px;
+           @media screen and (max-width: 1100px) {
+            font-size: 15px;
+            letter-spacing: -1px;
+        }
+         @media screen and (max-width: 740px) {
+            font-size: 18px;
+            letter-spacing: 0px;
+        }
       }
 
       p {
@@ -193,6 +244,14 @@ const Body1all = styled.div`
         color: #555;
         font-weight: 700;
         line-height: 1.5;
+           @media screen and (max-width: 1100px) {
+            font-size: 12px;
+            word-break: keep-all;
+        }
+         @media screen and (max-width: 740px) {
+            font-size: 14px;
+            letter-spacing: 0px;
+        }
       }
     }
   }

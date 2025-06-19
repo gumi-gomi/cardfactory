@@ -37,12 +37,23 @@ const Mainbox = styled.div`
       position: absolute;
       top: 80px;
       right: -30px;
+        @media screen and (max-width: 1000px) {
+            right: 0px;
+        }
       p {
         text-align: right;
         font-size: 20px;
         font-weight: 700;
         line-height: 32px;
         letter-spacing: -0.5px;
+         
+          @media screen and (max-width: 800px) {
+            font-size: 18px;
+        }
+         @media screen and (max-width: 660px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
       }
     }
 
@@ -69,6 +80,12 @@ const Mainbox = styled.div`
     canvas {
       display: block;
       margin-left: 40px;
+      @media screen and (max-width:1000px) {
+        scale: 0.8;
+      }
+       @media screen and (max-width:690px) {
+        scale: 0.75;
+      }
     }
   }
 `;

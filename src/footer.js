@@ -11,12 +11,22 @@ display: flex;
 gap: 10px;
 margin-top: 130px;
 
+
+
 div{
     flex: 1;
     /* outline: 1px dotted red; */
     font-size: 14px;
+    @media screen and (max-width: 800px) {
+    font-size: 12px;
+}
+  @media screen and (max-width: 650px) {
+    font-size: 11px;
+    letter-spacing: -1px;
+}
 }
 .area1{
+    margin-left: 30px;
     ul{
         list-style: none;
         li{
@@ -40,13 +50,22 @@ div{
         }
     }
 }
-.area3{}
+.area3{
+    @media screen and (max-width: 550px) {
+        margin-right: 30px;
+        word-break: keep-all;
+    }
+}
 .area4{
     /* outline: 1px dotted red; */
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (max-width: 550px) {
+        display: none;
+    }
      ul{
         width: 170px;
         /* outline: 1px dotted red; */
