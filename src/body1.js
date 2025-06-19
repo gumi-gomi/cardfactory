@@ -21,7 +21,7 @@ const Body1all = styled.div`
     max-width: 1300px;
     height: 400px;
     margin: 0 auto 40px auto;
-    background-image: url('/img/whatsnew.png');
+    background-image: url('${process.env.PUBLIC_URL}/img/whatsnew.png');
     background-size: cover;
     background-position: center;
     background-color: royalblue;
@@ -103,15 +103,15 @@ const Body1all = styled.div`
           transition: 0.2s;
         }
 
-        .item1 { background-image: url('/img/item1.png'); }
-        .item2 { background-image: url('/img/item2.png'); }
-        .item3 { background-image: url('/img/item3.png'); }
-        .item4 { background-image: url('/img/item4.png'); }
-        .item5 { background-image: url('/img/item5.png'); }
-        .item6 { background-image: url('/img/item6.png'); }
-        .item7 { background-image: url('/img/item7.png'); }
-        .item8 { background-image: url('/img/item8.png'); }
-        .item9 { background-image: url('/img/item9.png'); }
+        .item1 { background-image: url('${process.env.PUBLIC_URL}/img/item1.png'); }
+        .item2 { background-image: url('${process.env.PUBLIC_URL}/img/item2.png'); }
+        .item3 { background-image: url('${process.env.PUBLIC_URL}/img/item3.png'); }
+        .item4 { background-image: url('${process.env.PUBLIC_URL}/img/item4.png'); }
+        .item5 { background-image: url('${process.env.PUBLIC_URL}/img/item5.png'); }
+        .item6 { background-image: url('${process.env.PUBLIC_URL}/img/item6.png'); }
+        .item7 { background-image: url('${process.env.PUBLIC_URL}/img/item7.png'); }
+        .item8 { background-image: url('${process.env.PUBLIC_URL}/img/item8.png'); }
+        .item9 { background-image: url('${process.env.PUBLIC_URL}/img/item9.png'); }
       }
 
       .slick-dots {
@@ -127,7 +127,7 @@ const Body1all = styled.div`
       align-items: center;
       justify-content: center;
       border-radius: 8px;
-      background-image: url('/img/search.png');
+      background-image: url('${process.env.PUBLIC_URL}/img/search.png');
       background-size: cover;
       background-position: center;
       outline: 1px solid rgba(0, 0, 0, 0.05);

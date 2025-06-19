@@ -21,7 +21,7 @@ const HeaderAll = styled.div`
      height: 100%;
      width: 150px;
      /* background-color: blue; */
-     background-image: url('/img/logo.png');
+     background-image: url('${process.env.PUBLIC_URL}/img/logo.png');
      background-size: contain;
      background-repeat: no-repeat;
     }

@@ -52,10 +52,9 @@ const Mainbox = styled.div`
       height: 200px;
       position: absolute;
       bottom: 0px;
-      left: 50%; transform: translateX(-48%);
+      left: 50%;
+      transform: translateX(-48%);
       text-align: center;
-      /* margin: 0 auto; */
-      /* outline: 1px dotted red; */
 
       p {
         font-size: clamp(24px, 6.5vw, 90px);
@@ -64,7 +63,6 @@ const Mainbox = styled.div`
         line-height: 1.1;
         word-break: keep-all;
         letter-spacing: -3px;
-        
       }
     }
 
@@ -75,27 +73,41 @@ const Mainbox = styled.div`
   }
 `;
 
+// ✅ 이미지 경로 수정
 const frontImages = [
-  '/img/card1.png', '/img/card2.png', '/img/card3.png', '/img/card4.png',
-  '/img/card5.png', '/img/card6.png', '/img/card7.png', '/img/card8.png',
-  '/img/card17.png', '/img/card18.png', '/img/card19.png',
-  // '/img/card20.png'
+  `${process.env.PUBLIC_URL}/img/card1.png`,
+  `${process.env.PUBLIC_URL}/img/card2.png`,
+  `${process.env.PUBLIC_URL}/img/card3.png`,
+  `${process.env.PUBLIC_URL}/img/card4.png`,
+  `${process.env.PUBLIC_URL}/img/card5.png`,
+  `${process.env.PUBLIC_URL}/img/card6.png`,
+  `${process.env.PUBLIC_URL}/img/card7.png`,
+  `${process.env.PUBLIC_URL}/img/card8.png`,
+  `${process.env.PUBLIC_URL}/img/card17.png`,
+  `${process.env.PUBLIC_URL}/img/card18.png`,
+  `${process.env.PUBLIC_URL}/img/card19.png`,
 ];
+
 const backImages = [
-  '/img/card9.png', '/img/card10.png', '/img/card11.png', '/img/card12.png',
-  '/img/card13.png', '/img/card14.png', '/img/card15.png', '/img/card16.png',
-  '/img/card21.png', '/img/card22.png', '/img/card23.png',
-  // '/img/card24.png'
+  `${process.env.PUBLIC_URL}/img/card9.png`,
+  `${process.env.PUBLIC_URL}/img/card10.png`,
+  `${process.env.PUBLIC_URL}/img/card11.png`,
+  `${process.env.PUBLIC_URL}/img/card12.png`,
+  `${process.env.PUBLIC_URL}/img/card13.png`,
+  `${process.env.PUBLIC_URL}/img/card14.png`,
+  `${process.env.PUBLIC_URL}/img/card15.png`,
+  `${process.env.PUBLIC_URL}/img/card16.png`,
+  `${process.env.PUBLIC_URL}/img/card21.png`,
+  `${process.env.PUBLIC_URL}/img/card22.png`,
+  `${process.env.PUBLIC_URL}/img/card23.png`,
 ];
 
 function Card({ frontTexture, backTexture, index, total }) {
   const radius = 1;
   const angle = (index / total) * Math.PI * 2;
-  
   const x = Math.cos(angle) * radius;
   const z = Math.sin(angle) * radius;
 
-  // 커서 변경
   const handlePointerOver = () => {
     document.body.style.cursor = 'grab';
   };
@@ -134,24 +146,18 @@ function Card({ frontTexture, backTexture, index, total }) {
 }
 
 function Cards({ onPointerOver, onPointerOut }) {
-
-   const groupRef = useRef();
-
+  const groupRef = useRef();
   const frontTextures = useTexture(frontImages);
   const backTextures = useTexture(backImages);
 
-    useFrame(() => {
+  useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.002; // ← 반시계 방향 회전
+      groupRef.current.rotation.y += 0.002;
     }
   });
 
   return (
-    <group 
-       ref={groupRef}
-      onPointerOver={onPointerOver} 
-      onPointerOut={onPointerOut}
-      >
+    <group ref={groupRef} onPointerOver={onPointerOver} onPointerOut={onPointerOut}>
       {frontTextures.map((front, i) => (
         <Card
           key={i}
@@ -199,7 +205,7 @@ const Main = () => {
   const handlePointerOut = () => {
     timeoutRef.current = setTimeout(() => {
       setEnableControl(false);
-    }, 2000); //
+    }, 2000);
   };
 
   return (
@@ -210,13 +216,10 @@ const Main = () => {
             <p>GUMIGOMI STUDIO</p>
           </div>
           <div className="textb2">
-           {/*  <p>
-             Powerful benefits and low annual fees. Compare with other card companies and decide. We will always strive to provide better service.
-            </p> */}
-             <p>
-             합리적인 연회비, 강력한 생활 혜택<br/>
-             일상 속 모든 소비에 특별함을 더합니다<br/>
-             CARDFACTORY는 더 나은 금융 경험을 만들어갑니다 
+            <p>
+              합리적인 연회비, 강력한 생활 혜택<br />
+              일상 속 모든 소비에 특별함을 더합니다<br />
+              CARDFACTORY는 더 나은 금융 경험을 만들어갑니다
             </p>
           </div>
           <div className="textb3">
@@ -225,10 +228,7 @@ const Main = () => {
           <Canvas camera={{ position: [0, 2, 5], fov: 55 }}>
             <Suspense fallback={null}>
               <ambientLight intensity={2} />
-              <Cards
-                onPointerOver={handlePointerOver}
-                onPointerOut={handlePointerOut}
-              />
+              <Cards onPointerOver={handlePointerOver} onPointerOut={handlePointerOut} />
               <ControlledOrbitControls enableControl={enableControl} />
             </Suspense>
           </Canvas>
