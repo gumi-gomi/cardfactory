@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import SurveyModal from './SurveyModal';
 
 const Body1all = styled.div`
   width: 100%;
@@ -258,6 +259,9 @@ const Body1all = styled.div`
 `
 
 const Body1 = () => {
+
+const [modalOpen, setModalOpen] = useState(false);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -292,7 +296,8 @@ const Body1 = () => {
           <div className="recommend-box">
             <h3>💡 나에게 맞는 카드 찾기</h3>
             <p>간단한 질문 몇 개로<br />당신에게 딱 맞는 카드를 추천해드려요.</p>
-            <button>지금 시작하기</button>
+            <button onClick={() => setModalOpen(true)}>지금 시작하기</button>
+            {modalOpen && <SurveyModal onClose={() => setModalOpen(false)} />}
           </div>
         </div>
       </div>
