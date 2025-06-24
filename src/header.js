@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HeaderAll = styled.div`
@@ -62,14 +63,19 @@ const header = () => {
   return (
     <>
         <HeaderAll>
-        <div className='logo'>
-            {/* logo */}
-        </div>
+            <Link to={'/'}>
+        <div className='logo'/>
+            </Link>
         <ul>
+            <Link 
+            to={'/detail'}
+            style={{textDecoration:'none',color:'#000'}}
+            >
             <li>카드</li>
+            </Link>
             <li>혜택</li>
             <li>고객지원</li>
-            <li>Q&A</li>
+            {/* <li>Q&A</li> */}
         </ul>
         </HeaderAll>
     </>

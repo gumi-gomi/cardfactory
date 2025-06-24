@@ -4,7 +4,7 @@ import React from 'react'
 import Main from './Main';
 import Header from './header';
 import Footer from './footer';
-
+import Cardetail from './carddetail'
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
     <Header/>
       <Routes>
         <Route path='/' element={<Main/>}/>
+        <Route path='/detail' element={<Cardetail/>}/>
       </Routes>
       <Footer/>
     </>
