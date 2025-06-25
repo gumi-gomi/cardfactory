@@ -43,38 +43,50 @@ const CardBox = styled.div`
 `;
 
 const CardImg = styled.img`
-  height:64%;
+  height: 64%;
   width: auto;
-  /* object-fit: cover; */
   transform: rotate(90deg);
   transform-origin: center center;
 `;
 
 const CardTitle = styled.div`
   margin-top: 10px;
-  font-weight: bold;
+  font-weight: 700;
   color: #333;
   font-size: 16px;
   text-align: center;
 `;
 
+const CardText = styled.div`
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+  width: 220px;
+  font-size: 14px;
+  letter-spacing: -1px;
+  word-break: keep-all;
+  text-align: center;
+  padding: 0px 30px;
+  box-sizing: border-box;
+`;
+
 const cardData = {
   premium: [
-    { title: 'Premium 1', img: `${process.env.PUBLIC_URL}/img/card1.webp` },
-    { title: 'Premium 2', img: `${process.env.PUBLIC_URL}/img/card4.webp` },
-    { title: 'Premium 3', img: `${process.env.PUBLIC_URL}/img/card5.webp` },
-    { title: 'Premium 4', img: `${process.env.PUBLIC_URL}/img/card6.webp` }
+    { title: 'AMEX GOLD', img: `${process.env.PUBLIC_URL}/img/card1.webp`, text: '아무나 가질 수 없는 럭셔리\n 그 이상의 카드' },
+    { title: 'Boutique Copper', img: `${process.env.PUBLIC_URL}/img/card4.webp`, text: '연간 최대 80만 바우처 제공\n M포인트 또는 마일리지 적립' },
+    { title: 'Boutique Velvet', img: `${process.env.PUBLIC_URL}/img/card5.webp`, text: '연간 30만 바우처 제공\n M포인트 또는 마일리지 적립' },
+    { title: 'The Green', img: `${process.env.PUBLIC_URL}/img/card6.webp`, text: '국내외 가맹점 1% 적립\n 일상생활 5개 영역 10% 할인' }
   ],
   shopping: [
-    { title: 'Shopping 1', img: `${process.env.PUBLIC_URL}/img/card2.webp` },
-    { title: 'Shopping 2', img: `${process.env.PUBLIC_URL}/img/card3.webp` },
-    { title: 'Shopping 3', img: `${process.env.PUBLIC_URL}/img/card7.webp` },
-    { title: 'Shopping 4', img: `${process.env.PUBLIC_URL}/img/card17.webp` }
+    { title: 'emart shpping', img: `${process.env.PUBLIC_URL}/img/card2.webp`, text: '이마트 가맹점 5% 적립\n 그 외 국내외가맹점 0.5% 적립' },
+    { title: 'MUSINSA RED', img: `${process.env.PUBLIC_URL}/img/card18.webp`, text: '무신사 할인에 무신사 적립금 추가 5% 적립' },
+    { title: '배달의민족 B-card', img: `${process.env.PUBLIC_URL}/img/card8.webp`, text: '배달의 민족 할인 5%\n한달에 3장의 추가 쿠폰' },
+    { title: 'MUSINSA BLUE', img: `${process.env.PUBLIC_URL}/img/card17.webp`, text: '무신사 쿠폰 3장 추가\n적립금 5% 추가 적립' }
   ],
   smart: [
-    { title: 'Smart Pick 1', img: `${process.env.PUBLIC_URL}/img/card8.webp` },
-    { title: 'Smart Pick 2', img: `${process.env.PUBLIC_URL}/img/card19.webp` },
-    { title: 'Smart Pick 3', img: `${process.env.PUBLIC_URL}/img/card18.webp` }
+    { title: 'X cut', img: `${process.env.PUBLIC_URL}/img/card7.webp`, text: '편의점 5% 할인\n최대 50만 x캐시백' },
+    { title: 'Korean Air Card', img: `${process.env.PUBLIC_URL}/img/card19.webp`, text: '연간 보너스 1만 마일리지\n1천원당 최대 3 마일리지 적립' },
+    { title: 'The Color', img: `${process.env.PUBLIC_URL}/img/card3.webp`, text: '현대차 구매 1.5% 적립\n업종별 최대 3% 적립' }
   ]
 };
 
@@ -86,6 +98,16 @@ const CardDetail = () => {
           <CardImg src={item.img} alt={item.title} />
         </CardBox>
         <CardTitle>{item.title}</CardTitle>
+        {item.text && (
+          <CardText>
+            {item.text.split('\n').map((line, idx) => (
+              <React.Fragment key={idx}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </CardText>
+        )}
       </div>
     ));
 
